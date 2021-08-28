@@ -1,0 +1,45 @@
+{
+  "generate_start_date": "2021-05-10",
+  "generate_end_date": "2021-08-25",
+
+  "local_Authority": "EXAMPLE Authority",
+  "mainFosterCarers": [
+    "Name 1",
+    "Name 2"
+  ],
+  "FosterCarers_SSW": [{
+    "name": "SSW First Name Last name",
+    "visit": "2021-02-10",
+    "virtual": true
+  }, {
+    "name": "SSW First Name Last name",
+    "visit": "2021-05-15",
+    "virtual": false
+  }, {
+    "name": "Different SSW First Name Last name",
+    "visit": "2021-08-20",
+    "virtual": true
+  }],
+
+  "child": {
+    "firstname": "Rachel",
+    "middlename": "Example",
+    "lastname": "Test-Lastname"
+  },
+  "child_social_worker": [{
+    "name": "SW SSW First Name Last name",
+    "visit": "2021-05-10",
+    "virtual": true
+  },
+  {
+    "name": "Different SW SSW First Name Last name",
+    "visit": "2021-07-15",
+    "virtual": true
+  },
+  {
+    "name": "Different SW SSW First Name Last name",
+    "visit": "2021-08-20",
+    "virtual": true
+  }
+]
+}
