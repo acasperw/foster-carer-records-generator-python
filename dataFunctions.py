@@ -2,27 +2,27 @@ import datetime
 import dateFunctions
 
 
-def getListOfFosterCarers(mainFosterCarers):
-    allCarers = " &amp; ".join(mainFosterCarers)
-    return str(allCarers)
+def get_list_of_foster_carers(main_foster_carers):
+    all_carers = " &amp; ".join(main_foster_carers)
+    return str(all_carers)
 
 
-def findDataFromArrayAndDate(dateObj: datetime.datetime, array):
-    arrayi = 0
+def find_data_from_array_and_date(date_obj: datetime.datetime, array):
+    array_i = 0
     for x in array:
-        visitDate = datetime.datetime.strptime(x['visit'], '%Y-%m-%d')
+        visit_date = datetime.datetime.strptime(x['visit'], '%Y-%m-%d')
         try:
-            nextVistDate = datetime.datetime.strptime(array[arrayi+1]['visit'], '%Y-%m-%d')
+            next_vist_date = datetime.datetime.strptime(array[array_i+1]['visit'], '%Y-%m-%d')
         except:
-            nextVistDate = datetime.datetime.now() + datetime.timedelta(days=2*365)
+            next_vist_date = datetime.datetime.now() + datetime.timedelta(days=2*365)
         # If date is in the past
-        if dateObj <= visitDate:
+        if date_obj <= visit_date:
             return '(none)'
         # Last visited date
-        if visitDate <= dateObj <= nextVistDate:
+        if visit_date <= date_obj <= next_vist_date:
             virtual = ""
             if bool(x['virtual']):
                 virtual = " (Virtual)"
-            return x['name'] + " - " + dateFunctions.custom_strftime(visitDate, True) + virtual
-        arrayi = arrayi + 1
+            return x['name'] + " - " + dateFunctions.custom_strftime(visit_date, True) + virtual
+        array_i = array_i + 1
     return '(none)'
